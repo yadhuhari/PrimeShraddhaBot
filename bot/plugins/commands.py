@@ -6,6 +6,7 @@ from pyrogram import filters, Client, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
+import random
 
 db = Database()
 
@@ -57,10 +58,12 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_message(
+    await bot.reply_photo(
         chat_id=update.chat.id,
-        text=Translation.START_TEXT.format(
-                update.from_user.first_name),
+        photo=random.choice(PICS),
+        caption=f"""Hᴇʏ ᴛʜᴇʀᴇ {update.from_user.mention} 👋,
+
+Mʏ Nᴀᴍᴇ Is Sʜʀᴀᴅᴅʜᴀ Kᴀᴘᴏᴏʀ ✨
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
