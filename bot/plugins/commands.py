@@ -46,25 +46,26 @@ async def start(bot, update):
             await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode=enums.ParseMode.HTML)
             LOGGER(__name__).error(e)
         return
-
-    buttons = [[
-        InlineKeyboardButton('Developers', url='https://t.me/CrazyBotsz'),
-        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2')
-    ],[
-        InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
-    ],[
-        InlineKeyboardButton('Help ⚙', callback_data="help")
-    ]]
-    
-    reply_markup = InlineKeyboardMarkup(buttons)
-    
     await bot.reply_photo(
         chat_id=update.chat.id,
         photo=random.choice(PICS),
-        caption=f"""Hᴇʏ ᴛʜᴇʀᴇ {update.from_user.mention} 👋,
+        caption=f"""<b> Hᴇʏ ᴛʜᴇʀᴇ {update.from_user.mention} 👋,
 
 Mʏ Nᴀᴍᴇ Is Sʜʀᴀᴅᴅʜᴀ Kᴀᴘᴏᴏʀ ✨
-        reply_markup=reply_markup,
+
+I Aᴍ ᴀ Mᴏᴠɪᴇ Pʀᴏᴠɪᴅɪɴɢ Mᴀᴄʜɪɴᴇ Fᴏʀ Pʀɪᴍᴇ Mᴏᴠɪᴇᴢ Gʀᴏᴜᴘs, Oɴʟʏ Aᴜᴛʜᴏʀɪᴢᴇᴅ Aᴅᴍɪɴs Cᴀɴ Usᴇ Mᴇ Sᴏ Dᴏɴ'ᴛ Wᴀsᴛᴇ Yᴏᴜʀ Tɪᴍᴇ 😁
+
+◈ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :- @PrimeXLinkzz </b>""",
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✨", url="t.me/PrimeXLinkzz"),
+            ],[
+            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data="help"),
+            InlineKeyboardButton("Aʙᴏᴜᴛ 🤠", callback_data="about"),
+            ],[
+            InlineKeyboardButton("Dᴇᴠᴇʟᴏᴘᴇʀ 💀", url="t.me/YourPrimeTG")
+            ]]
+            )
+        )
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
     )
@@ -73,17 +74,20 @@ Mʏ Nᴀᴍᴇ Is Sʜʀᴀᴅᴅʜᴀ Kᴀᴘᴏᴏʀ ✨
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(bot, update):
     buttons = [[
-        InlineKeyboardButton('Home ⚡', callback_data='start'),
-        InlineKeyboardButton('About 🚩', callback_data='about')
+        InlineKeyboardButton('Hᴏᴍᴇ 🏡', callback_data='start'),
+        InlineKeyboardButton('Aʙᴏᴜᴛ 🤠', callback_data='about')
     ],[
-        InlineKeyboardButton('Close 🔐', callback_data='close')
+        InlineKeyboardButton('Cʟᴏsᴇ ⛔', callback_data='close')
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_message(
+    await bot.reply_photo(
         chat_id=update.chat.id,
-        text=Translation.HELP_TEXT,
+        photo=random.choice(PICS),
+        caption=f"""<b> Hᴇʏ {update.from_user.mention} 👋,
+        
+ Sᴇᴇ Yᴏᴜ Iɴ Gʀᴏᴜᴘ കുട്ടാ..😁 </b>""",
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
@@ -94,16 +98,24 @@ async def help(bot, update):
 async def about(bot, update):
     
     buttons = [[
-        InlineKeyboardButton('Home ⚡', callback_data='start'),
-        InlineKeyboardButton('Close 🔐', callback_data='close')
+        InlineKeyboardButton('Hᴏᴍᴇ 🏡', callback_data='start'),
+        InlineKeyboardButton('Cʟᴏsᴇ ⛔', callback_data='close')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_message(
+    await bot.reply_photo(
         chat_id=update.chat.id,
-        text=Translation.ABOUT_TEXT,
+        photo=random.choice(PICS),
+        caption=f"""<b> Hᴇʏ {update.from_user.mention} 👋,
+         
+✯ Mʏ Nᴀᴍᴇ : [Sʜʀᴀᴅᴅʜᴀ Kᴀᴘᴏᴏʀ](t.me/PrimeShraddhaBot)
+✯ Dᴇᴠᴇʟᴏᴘᴇʀ : [𓊈𒆜 𝙼𝚛.ᴘʀɪᴍᴇ 𝚃𝙶 𒆜𓊉](t.me/YourPrimeTG)
+✯ Lᴀɴɢᴜᴀɢᴇ : [Pʏᴛʜᴏɴ 3.13.0](www.python.org)
+✯ Lɪʙʀᴀʀʏ : [Pʏʀᴏɢʀᴀᴍ](https://docs.pyrogram.org/)
+✯ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ : [Pʀɪᴍᴇ Lɪɴᴋᴢᴢ ✨](t.me/PrimeXLinkzz)
+✯ Sᴇʀᴠᴇʀ : Sᴏᴍᴇᴡʜᴇʀᴇ
+✯ Dᴀᴛᴀʙᴀsᴇ : [Mᴏɴɢᴏ DB](www.mongodb.com) </b>""",
         reply_markup=reply_markup,
-        disable_web_page_preview=True,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
     )
