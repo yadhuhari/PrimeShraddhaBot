@@ -203,7 +203,7 @@ async def auto_filter(bot, update):
         try:
             await bot.reply_photo(
                 chat_id = update.chat.id,
-                photo=random.choice(PICS),
+                photo="http://ibb.co/m8T9L4K",
                 caption=f"""<b> Hᴇʏ ᴛʜᴇʀᴇ {update.from_user.mention} 👋,
 
 ✯ Tɪᴛʟᴇ : <code>{query}</code>
