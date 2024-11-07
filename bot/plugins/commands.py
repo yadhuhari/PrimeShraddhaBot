@@ -8,6 +8,10 @@ from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 import random
 
+PICS = [
+ "http://ibb.co/SQ2RZXx",
+]
+
 db = Database()
 
 @Client.on_message(filters.command(["start"]) & filters.private, group=1)
@@ -24,11 +28,12 @@ async def start(bot, update):
         if (file_id or file_type) == None:
             return
         
-        caption = file_caption if file_caption != ("" or None) else ("<code>" + file_name + "</code>")
+        caption = '<code>{file_name}</code> \n\n❤️‍🔥 <b>Jᴏɪɴ</b> [Pʀɪᴍᴇ Lɪɴᴋᴢᴢ ✨](https://t.me/PrimeXLinkzz)' if file_caption != ("" or None) else ("<code>" + file_name + "</code>")
         try:
             await update.reply_cached_media(
                 file_id,
                 quote=True,
+                thumb="http://ibb.co/XshSnzF",
                 caption = caption,
                 parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
@@ -36,7 +41,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/CrazyBotsz"
+                                    '❤ Dᴇᴠᴇʟᴏᴘᴇᴅ Bʏ', url="https://t.me/YourPrimeTG"
                                 )
                         ]
                     ]
