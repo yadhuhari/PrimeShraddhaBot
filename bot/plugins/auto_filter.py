@@ -81,7 +81,7 @@ async def auto_filter(bot, update):
             file_size = "" if file_size == ("[0 B]") else file_size
             
             # add emoji down below inside " " if you want..
-            button_text = f"{file_size}{file_name}"
+            button_text = f"@PrimeXLinkzz {file_size}{file_name}"
             
 
             if file_type == "video":
@@ -147,13 +147,13 @@ async def auto_filter(bot, update):
         if len_result != 1:
             result[0].append(
                 [
-                    InlineKeyboardButton("Next ⏩", callback_data=f"navigate(0|next|{query})")
+                    InlineKeyboardButton("Nᴇxᴛ ➡️", callback_data=f"navigate(0|next|{query})")
                 ]
             )
         
         # Just A Decaration
         result[0].append([
-            InlineKeyboardButton(f"🔰 Page 1/{len_result if len_result < max_pages else max_pages} 🔰", callback_data="ignore")
+            InlineKeyboardButton(f"📃 Pᴀɢᴇ 1/{len_result if len_result < max_pages else max_pages} 🔰", callback_data="ignore")
         ])
         
         
@@ -201,9 +201,18 @@ async def auto_filter(bot, update):
         reply_markup = InlineKeyboardMarkup(result[0])
 
         try:
-            await bot.send_message(
+            await bot.reply_photo(
                 chat_id = update.chat.id,
-                text=f"Found {(len_results)} Results For Your Query: <code>{query}</code>",
+                photo=random.choice(PICS),
+                caption=f"""<b> Hᴇʏ ᴛʜᴇʀᴇ {update.from_user.mention} 👋,
+
+✯ Tɪᴛʟᴇ : <code>{query}</code>
+✯ Nᴏ. Oғ Fɪʟᴇs : {(len_results)}
+✯ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {update.from_user.mention}
+
+🔥༺ ──•◈•─ •• ─•◈•──༻🔥
+✯ 💈𝚄ρℓσα∂є∂💈 : @PrimeXLinkzz
+🔥༺ ──•◈•─ •• ─•◈•──༻🔥 </b>""",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML,
                 reply_to_message_id=update.id
