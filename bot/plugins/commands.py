@@ -35,7 +35,6 @@ async def start(bot, update):
                 quote=True,
                 thumb="http://ibb.co/XshSnzF",
                 caption = caption,
-                parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -71,7 +70,6 @@ I Aᴍ ᴀ Mᴏᴠɪᴇ Pʀᴏᴠɪᴅɪɴɢ Mᴀᴄʜɪɴᴇ Fᴏʀ Pʀɪᴍᴇ
             ]]
             )
         )
-    )
 
 
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
