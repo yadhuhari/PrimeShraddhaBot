@@ -71,8 +71,6 @@ I Aᴍ ᴀ Mᴏᴠɪᴇ Pʀᴏᴠɪᴅɪɴɢ Mᴀᴄʜɪɴᴇ Fᴏʀ Pʀɪᴍᴇ
             ]]
             )
         )
-        parse_mode=enums.ParseMode.HTML,
-        reply_to_message_id=update.id
     )
 
 
@@ -93,9 +91,7 @@ async def help(bot, update):
         caption=f"""<b> Hᴇʏ {update.from_user.mention} 👋,
         
  Sᴇᴇ Yᴏᴜ Iɴ Gʀᴏᴜᴘ കുട്ടാ..😁 </b>""",
-        reply_markup=reply_markup,
-        parse_mode=enums.ParseMode.HTML,
-        reply_to_message_id=update.id
+        reply_markup=reply_markup
     )
 
 
@@ -120,7 +116,5 @@ async def about(bot, update):
 ✯ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ : [Pʀɪᴍᴇ Lɪɴᴋᴢᴢ ✨](t.me/PrimeXLinkzz)
 ✯ Sᴇʀᴠᴇʀ : Sᴏᴍᴇᴡʜᴇʀᴇ
 ✯ Dᴀᴛᴀʙᴀsᴇ : [Mᴏɴɢᴏ DB](www.mongodb.com) </b>""",
-        reply_markup=reply_markup,
-        parse_mode=enums.ParseMode.HTML,
-        reply_to_message_id=update.id
+        reply_markup=reply_markup
     )
